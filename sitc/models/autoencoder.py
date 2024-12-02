@@ -46,6 +46,8 @@ class Encoder(nn.Module):
         self.rp = nn.ReflectionPad2d(1)
     
     def forward(self, x):
+        x = x.permute(0, 3, 1, 2)
+
         x = self.rp(self.mp(self.lr(self.conv1(x))))
         x = self.rp(self.mp(self.lr(self.conv2(x))))
         x = self.rp(self.mp(self.lr(self.conv3(x))))
