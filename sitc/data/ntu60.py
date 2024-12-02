@@ -164,7 +164,7 @@ class NTU60(torch.utils.data.Dataset):
             # Cut the data once the desired number of frames is reached
             keypoint_samples = [keypoint_samples[i] for i in range(self.max_frames)]
 
-        # Swap T and J, so that the shape is (J, T, 3)
-        #keypoint_samples = np.swapaxes(np.array(keypoint_samples), 0, 1)
+        # Reshape from (T, J, 3) to (3, T, J)
+        keypoint_samples = np.transpose(keypoint_samples, (2, 0, 1))
 
-        return np.array(keypoint_samples)
+        return keypoint_samples
