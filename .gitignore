@@ -164,3 +164,5 @@ cython_debug/
 sitc/data/pairings/
 sitc/data/splits/
 sitc/data/*.txt
+
+sitc/runs/

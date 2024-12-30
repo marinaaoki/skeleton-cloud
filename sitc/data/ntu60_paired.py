@@ -6,9 +6,9 @@ import torch
 import re
 import os
 
-class NTU60(torch.utils.data.Dataset):
+class PairedNTU60(torch.utils.data.Dataset):
     """
-    Dataset for loading skeleton samples from the NTU60 dataset.
+    Dataset for loading skeleton sample pairings from the NTU60 dataset.
     """
     dataset_path = Path("sitc/data")
 

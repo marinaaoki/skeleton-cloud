@@ -1,6 +1,12 @@
 import torch
 import torch.nn as nn
 
+class PairedAELoss(nn.Module):
+    def __init__(self, alpha_rec=2, alpha_smooth=3):
+        super(PairedAELoss, self).__init__()
+        self.alpha_rec = alpha_rec
+        self.alpha_smooth = alpha_smooth
+
 class AELoss(nn.Module):
     def __init__(self, alpha_rec=2, alpha_smooth=3):
         super(AELoss, self).__init__()
@@ -8,7 +14,7 @@ class AELoss(nn.Module):
         self.alpha_smooth = alpha_smooth
     
     def forward(self, inputs, targets):
-        loss_rec = nn.MSELoss()
+        loss_rec = ReconstructionLoss()
         loss_smooth = SmoothLoss()
 
         return self.alpha_rec * loss_rec(inputs, targets) + self.alpha_smooth * loss_smooth(inputs, targets)
@@ -37,5 +43,14 @@ class SmoothLoss(nn.Module):
             total_shifts.append(torch.abs(sum(input_shifts) - sum(target_shifts)))
 
         loss = torch.sqrt(sum(total_shifts)) / (J * T)
+
+        return loss.mean()
+    
+class ReconstructionLoss(nn.Module):
+    def __init__(self):
+        super(ReconstructionLoss, self).__init__()
+    
+    def forward(self, inputs, targets):
+        loss = torch.abs(inputs - targets) ** 2
 
         return loss.mean()

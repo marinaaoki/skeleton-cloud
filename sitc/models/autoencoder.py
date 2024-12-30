@@ -1,8 +1,34 @@
 import torch
 import torch.nn as nn
 
-class AE(nn.Module):
+class PairedAE(nn.Module):
+    def __init__(self, **kwargs):
+        super(PairedAE, self).__init__()
 
+        self.dummy_em = EM()
+        self.dummy_pm = PM()
+
+        self.orig_em = EM()
+        self.orig_pm = PM()
+
+        self.decoder = Decoder()
+
+    def forward(self, original, dummy):
+        dummy_clone = dummy.clone()
+        orig_clone = original.clone()
+
+        dummy_motion_embedding = self.dummy_em(dummy)
+        dummy_privacy_embedding = self.dummy_pm(dummy_clone)
+
+        orig_motion_embedding = self.orig_em(original)
+        orig_privacy_embedding = self.orig_pm(orig_clone)
+
+        x = torch.cat((orig_motion_embedding, dummy_privacy_embedding), 1)
+        x = self.decoder(x)
+
+        return x
+
+class AE(nn.Module):
     def __init__(self, **kwargs):
         super(AE, self).__init__()
 
