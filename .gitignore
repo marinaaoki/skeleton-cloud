@@ -166,3 +166,5 @@ sitc/data/splits/
 sitc/data/*.txt
 
 sitc/runs/
+
+*.code-workspace
