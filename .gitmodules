@@ -1,8 +1,8 @@
-[submodule "src/third_party/sitc-ak-driver"]
-	path = src/third_party/sitc-ak-driver
+[submodule "src/submodules/sitc-ak-driver"]
+	path = src/submodules/sitc-ak-driver
 	url = https://github.com/marinaaoki/sitc-ak-driver.git
-[submodule "src/third_party/sitc-studio"]
-	path = src/third_party/sitc-studio
+[submodule "src/submodules/sitc-studio"]
+	path = src/submodules/sitc-studio
 	url = https://github.com/marinaaoki/sitc-studio.git
 [submodule "src/submodules/simple-HRNet"]
 	path = src/submodules/simple-HRNet
