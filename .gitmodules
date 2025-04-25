@@ -4,3 +4,12 @@
 [submodule "src/third_party/sitc-studio"]
 	path = src/third_party/sitc-studio
 	url = https://github.com/marinaaoki/sitc-studio.git
+[submodule "src/submodules/simple-HRNet"]
+	path = src/submodules/simple-HRNet
+	url = https://github.com/stefanopini/simple-HRNet.git
+[submodule "src/submodules/SGN"]
+	path = src/submodules/SGN
+	url = https://github.com/microsoft/SGN.git
+[submodule "src/submodules/2D-Motion-Retargeting"]
+	path = src/submodules/2D-Motion-Retargeting
+	url = https://github.com/ChrisWu1997/2D-Motion-Retargeting.git
