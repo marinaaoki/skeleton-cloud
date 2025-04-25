@@ -1,0 +1,6 @@
+[submodule "src/third_party/sitc-ak-driver"]
+	path = src/third_party/sitc-ak-driver
+	url = https://github.com/marinaaoki/sitc-ak-driver.git
+[submodule "src/third_party/sitc-studio"]
+	path = src/third_party/sitc-studio
+	url = https://github.com/marinaaoki/sitc-studio.git
