@@ -18,9 +18,10 @@ The dataset can be provided upon request.
 
 There are various submodules responsible for different aspects of the system:
 
-1. Data collection: these are provided by `sitc-ak-driver` and `sitc-studio`.
-2. Data pre-processing: these are handled by the scripts in `src/processing`.
-3. Data visualisation: these are handled by the scripts in `src/visualisation`.
-4. SAR and SRID training: handled by `SGN` submodule.
-5. Data conversions: these are handled by the scripts in `src/conversions`. Note that the BODY15 format is similar to BODY25 but with the last ten joints simply omitted.
-6. Motion retargeting: handled by `2D-Motion-Retargeting` submodule.
+1. Data collection: these are provided by [`sitc-ak-driver`](https://github.com/marinaaoki/sitc-ak-driver/blob/55ca462b28664ab7ce11d9a79a26c6893472f0ab) and [`sitc-studio`](https://github.com/marinaaoki/sitc-studio/blob/a5a1a78c79790080e4de5451c546b87a7bc788b8).
+2. Data pre-processing: these are handled by the scripts in [`src/preprocessing`](src/preprocessing/).
+3. Data visualisation: these are handled by the scripts in [`src/visualisation`](src/visualisation).
+4. Human pose estimation: handled by [`simple-HRNet`](https://github.com/stefanopini/simple-HRNet/tree/dcfdb8ee0415b615d68f578b3eb172c73e5dda74) submodule.
+5. SAR and SRID training: handled by [`SGN`](https://github.com/microsoft/SGN/tree/42c5784422db2823c6e826d60da4cde8b718f2c6) submodule.
+6. Data conversions: these are handled by the scripts in [`src/conversions`](src/conversions). Note that the BODY15 format is similar to BODY25 but with the last ten joints simply omitted.
+7. Motion retargeting: handled by [`2D-Motion-Retargeting`](https://github.com/ChrisWu1997/2D-Motion-Retargeting/tree/bdb4e78ae6e586fbc3d1145b82170645c4bcde60) submodule.
